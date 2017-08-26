@@ -4,7 +4,9 @@ import { Component } from 'react';
 class SecondaryMessage extends Component {
   render() {
     return (
-      <p>This is secondary message</p>
+      <h3 className={this.props.className}>
+        {this.props.SecondaryMessage}
+      </h3>
     );
   }
 }

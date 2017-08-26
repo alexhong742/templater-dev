@@ -4,7 +4,6 @@ const path = require('path');
 const bodyParse = require('body-parser');
 const zipper = require('./zipper');
 const templateController = require('./templateController')
-const createFolder = require('./folderBuilder.js');
 const remover = require('./remover.js');
 const moduleController = require('./moduleController.js')
 const settingsController = require('./settingsController');

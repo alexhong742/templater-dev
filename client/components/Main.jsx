@@ -10,7 +10,10 @@ import Button from './Button.jsx';
 
 class Main extends Component {
   render() {
+    //This variable is used for conditional rendering for the form component
+    let displayCtaModal = this.props.displayCtaModal;
     return (
+
       <main>
         <Div 
           className="main-image"/>
@@ -21,27 +24,31 @@ class Main extends Component {
           className="secondary-message"
           SecondaryMessage="A set of customizable React templates that helps developers to create beautiful App with few clicks"/>
         <Button 
+          type="submit"
           className="cta"
           buttonName="Download Template"
           click={this.props.toggleModal}/>
-        <Form 
-          name={this.props.name}
-          author={this.props.author}
-          
-          outputFileName={this.props.outputFileName}
-          useSass={this.props.useSass}
-          fileLoader={this.props.fileLoader}
-          webpackImageLoader={this.props.webpackImageLoader}
+        {displayCtaModal === true &&
+          <Form 
+            name={this.props.name}
+            author={this.props.author}
+            
+            outputFileName={this.props.outputFileName}
+            useSass={this.props.useSass}
+            fileLoader={this.props.fileLoader}
+            webpackImageLoader={this.props.webpackImageLoader}
 
-          components={this.props.components}
-          style={this.props.style}
-          assets={this.props.assets}
+            components={this.props.components}
+            style={this.props.style}
+            assets={this.props.assets}
 
-          displayCtaModal={this.props.displayCtaModal}
+            displayCtaModal={this.props.displayCtaModal}
+            toggleModalClose={this.props.toggleModalClose}
 
-          handleFormChange={this.props.handleFormChange}
-          handleInputFocus={this.props.handleInputFocus}
-          clickDownload={this.props.clickDownload}/>
+            handleFormChange={this.props.handleFormChange}
+            handleInputFocus={this.props.handleInputFocus}
+            clickDownload={this.props.clickDownload}/>
+        }
       </main>
     );
   }

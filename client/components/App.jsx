@@ -30,12 +30,18 @@ class App extends Component {
         }
       },
       //styles
-      displayCtaModal: {
-        display: 'block'
-      }
+      displayCtaModal: false
     };
   }
 
+  //Display form when call to action button is clicked
+  toggleModal = (e) => {
+    this.setState({ displayCtaModal: true });
+  }
+  //Closes the cta modal, but it'd be cool if toggleModal and toggleModalClose a single function;
+  toggleModalClose = () => {
+    this.setState({ displayCtaModal: false });
+  }
   //This changes the state.download data that will be send to the server via post request.
   handleFormChange = (e) => {
     let downloadClone = this.state.download;
@@ -96,12 +102,6 @@ class App extends Component {
     }
   }
 
-  //Display form when call to action button is clicked
-  toggleModal = (e) => {
-    console.log('clicked');
-    this.setState({ displayCtaModal: { display: 'none' } });
-  }
-
   render() {
     return (
       <div className="container">
@@ -121,6 +121,7 @@ class App extends Component {
 
           displayCtaModal={this.state.displayCtaModal}
           toggleModal={this.toggleModal}
+          toggleModalClose={this.toggleModalClose}
 
           handleFormChange={this.handleFormChange}
           handleInputFocus={this.handleInputFocus}

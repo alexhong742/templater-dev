@@ -121,7 +121,6 @@ header div:last-child {
 
 /******** Form Section ********/ 
 form {
-  display: none;
   @include center-align();
   width: 70%;
   height: auto;
@@ -136,6 +135,15 @@ form input[type="text"]:focus {
 form button {
   padding: 15px 40px;
   background-color: #76ACFF;
+}
+form .close {
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  display: inline-block;
+  width: 50px;
+  height: 50px; 
+  background-image: url("../assets/close-icon.png");
 }
 form h2 {
   font-size: 1.4rem;

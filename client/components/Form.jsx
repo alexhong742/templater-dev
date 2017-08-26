@@ -6,9 +6,12 @@ import Button from './Button.jsx';
 
 class Form extends Component {
   render() {
+    console.log('rendering')
     return (
-      <form style={this.props.displayCtaModal}>
+      <form>
         <h2>Template Setup:</h2>
+        <div className="close"
+          onClick={this.props.toggleModalClose}></div>
         <div className="input input-1">
           <h3>Package.json Setup:</h3>
           <div className="text-input">
@@ -60,26 +63,29 @@ class Form extends Component {
         </div>
 
         <div className="input input-3">
+          <h3>Resource Setup:</h3>
           <div className="checkbox-input">
-            <h3>Select Components:</h3>
+            <p>Select Components:</p>
             <input type="checkbox" name="components" 
               value={this.props.components} 
               onChange={ this.props.handleFormChange}/>
           </div>
           <div className="checkbox-input">
-            <h3>Select Style:</h3>
+            <p>Select Style:</p>
             <input type="checkbox" name="style" 
               value={this.props.style} 
               onChange={ this.props.handleFormChange} />
           </div>
           <div className="checkbox-input">
-            <h3>Select Assets:</h3>
+            <p>Select Assets:</p>
             <input type="checkbox" name="assets" 
               value={this.props.assets} 
               onChange={ this.props.handleFormChange} />
           </div>
         </div>
-        <Button buttonName="Download" 
+        <Button 
+          buttonName="Download" 
+          type="button"
           click={this.props.clickDownload} 
           onChange={ this.props.handleFormChange} />
       </form>
