@@ -7,6 +7,7 @@ const templateController = require('./templateController')
 const createFolder = require('./folderBuilder.js');
 const remover = require('./remover.js');
 const moduleController = require('./moduleController.js')
+// const john = require('./john.js')
 
 app.use(bodyParse());
 app.use(express.static('build'));
@@ -28,6 +29,7 @@ app.post('/',
   moduleController.assets,
   moduleController.components,
   moduleController.style,
+   //johns middleware,
   zipper,
   (req, res) => {
   res.send('this is the response');
