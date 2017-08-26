@@ -33,9 +33,7 @@ app.post('/',
   res.send('this is the response');
 })
 
-// app.post('/', createFolder, zipper, (req, res) => {
-//   res.send('this is the response');
-// })
+app.use('/assets', express.static('build'));
 
 app.listen(3000, () => {
     console.log('now listening on 3000!');

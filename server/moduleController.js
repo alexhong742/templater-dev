@@ -8,7 +8,7 @@ const src = (include) => {
 module.exports = {
 
   assets(req, res, next) {
-    if (!req.body.assets) next();
+    if (!req.body.dirSelection.assets) next();
     else{
     const assetsDir = path.join(__dirname, './../store/polymerUI/client/assets/');
     copy(src('assets'), assetsDir, (err,result) => {
@@ -20,7 +20,7 @@ module.exports = {
   },
 
   components(req, res, next) {
-    if (!req.body.components) {
+    if (!req.body.dirSelection.components) {
       next();
     } else {
       const componentsDir  = path.join(__dirname, './../store/polymerUI/client/components/');
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   style(req, res, next) {
-    if (!req.body.style) {
+    if (!req.body.dirSelection.style) {
       next();
     } else {
       const styleDir  = path.join(__dirname, './../store/polymerUI/client/style/');

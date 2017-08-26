@@ -13,40 +13,69 @@ class App extends Component {
     super(props);
     this.state = {
       download: {
-        name: 'name',
-        author: 'author',
-        assets: false,
-        components: false,
-        style: false,
-        build: false,
+        packageJson: {
+          name: 'name',
+          author: 'author',
+        },
+        webpackConfig: {
+          outputFileName: 'bundle.js',
+          useSass: false,
+          fileLoader: false,
+          webpackImageLoader: false,
+        },
+        dirSelection: {
+          assets: false,
+          components: false,
+          style: false,
+        }
+      },
+      //styles
+      displayCtaModal: {
+        display: 'block'
       }
     };
   }
 
+  //This changes the state.download data that will be send to the server via post request.
   handleFormChange = (e) => {
     let downloadClone = this.state.download;
+    //Conditional for changing value of packageJson object inside state
     if (e.target.name === 'name') {
-      downloadClone.name = e.target.value;
+      downloadClone.packageJson.name = e.target.value;
       this.setState({download: downloadClone});
     }
     if (e.target.name === 'author') {
-      downloadClone.author = e.target.value;
+      downloadClone.packageJson.author = e.target.value;
       this.setState({download: downloadClone});
     }
+    //Conditional for changing value of webpackConfig object inside state
+    if (e.target.name === 'outputFileName') {
+      downloadClone.webpackConfig.outputFileName = e.target.value;
+      this.setState({download: downloadClone});
+    }
+    if (e.target.name === 'useSass') {
+      downloadClone.webpackConfig.useSass = e.target.checked;
+      this.setState({download: downloadClone});
+    }
+    if (e.target.name === 'fileLoader') {
+      downloadClone.webpackConfig.fileLoader = e.target.checked;
+      this.setState({download: downloadClone});
+    }
+    if (e.target.name === 'webpackImageLoader') {
+      downloadClone.webpackConfig.webpackImageLoader = e.target.checked;
+      this.setState({download: downloadClone});
+    }
+    //Conditional for changing value of dirSelection object inside state
     if (e.target.name === 'components') {
-      downloadClone.components = e.target.checked;
+      downloadClone.dirSelection.components = e.target.checked;
       this.setState({download: downloadClone});
     }
     if (e.target.name === 'style') {
-      downloadClone.style = e.target.checked;
+      downloadClone.dirSelection.style = e.target.checked;
       this.setState({download: downloadClone});
     }
     if (e.target.name === 'assets') {
-      downloadClone.assets = e.target.checked;
-      this.setState({download: downloadClone});
-    }
-    if (e.target.name === 'build') {
-      downloadClone.build = e.target.checked;
+      downloadClone.dirSelection.assets = e.target.checked;
       this.setState({download: downloadClone});
     }
   }
@@ -60,18 +89,41 @@ class App extends Component {
       });
   }
 
+  //This clears the text input field when it's in focus
+  handleInputFocus = (e) => {
+    if (e.target.name.toLowerCase() === e.target.value.toLowerCase()) {
+      e.target.value = '';
+    }
+  }
+
+  //Display form when call to action button is clicked
+  toggleModal = (e) => {
+    console.log('clicked');
+    this.setState({ displayCtaModal: { display: 'none' } });
+  }
+
   render() {
     return (
       <div className="container">
         <Header />
         <Main 
-          name={this.state.download.name}
-          author={this.state.download.author}
-          assets={this.state.download.assets}
-          components={this.state.download.components}
-          style={this.state.download.style}
-          build={this.state.download.build}
+
+          name={this.state.download.packageJson.name}
+          author={this.state.download.packageJson.author}
+          outputFileName={this.state.download.webpackConfig.outputFileName}
+          useSass={this.state.download.webpackConfig.useSass}
+          fileLoader={this.state.download.webpackConfig.fileLoader}
+          webpackImageLoader={this.state.download.webpackConfig.webpackImageLoader}
+
+          components={this.state.download.dirSelection.components}
+          style={this.state.download.dirSelection.style}
+          assets={this.state.download.dirSelection.assets}
+
+          displayCtaModal={this.state.displayCtaModal}
+          toggleModal={this.toggleModal}
+
           handleFormChange={this.handleFormChange}
+          handleInputFocus={this.handleInputFocus}
           clickDownload={this.handleDownload}/>
       </div>
     );
