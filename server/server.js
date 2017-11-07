@@ -33,8 +33,7 @@ app.post('/',
   // settingsController.packageParser,
   // settingsController.webpackParser,
   zipper,
-  (req, res) => {res.send('this is the response')},
-);
+  (req, res) => {res.send('this is the response')});
 
 app.use('/assets', express.static('build'));
 
