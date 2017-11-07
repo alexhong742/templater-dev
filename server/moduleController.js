@@ -8,8 +8,10 @@ const src = (include) => {
 module.exports = {
 
   assets(req, res, next) {
-    if (!req.body.dirSelection.assets) next();
-    else {
+    if (!req.body.dirSelection.assets) {
+      console.log(req.body.dirSelection.assets, "req.body.dirSelection.assets")
+      next();
+    } else {
       const assetsDir = path.join(__dirname, './../store/polymerUI/client/assets/');
       copy(src('assets'), assetsDir, (err,result) => {
         if (err){console.log('Copy Failed: ' + err)}
@@ -17,12 +19,13 @@ module.exports = {
           console.info('Copied ' + result.length + ' asset files');
           next();
         }
-      });
+      })
     }
   },
 
   components(req, res, next) {
     if (!req.body.dirSelection.components) {
+      console.log('components middleware was hit')
       next();
     } else {
       const componentsDir = path.join(__dirname, './../store/polymerUI/client/components/');
@@ -33,11 +36,12 @@ module.exports = {
           next();
         }
       });
-    }
+    } 
   },
 
   style(req, res, next) {
     if (!req.body.dirSelection.style) {
+      console.log('style middleware was hit')
       next();
     } else {
       const styleDir = path.join(__dirname, './../store/polymerUI/client/style/');
@@ -45,8 +49,8 @@ module.exports = {
         if(err){console.log('Copy Failed: ' + err)}
         else{
           console.info('Copied ' + result.length + ' style files')
-          next();
         }
+        next();
       });
     }
   },

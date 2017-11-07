@@ -11,7 +11,8 @@ module.exports = (req,res,next) => {
     console.error('Copy failed: ' + error);
     } else {
     console.info('Copied in template controller' + results.length + ' files');
-    }
     next()
+    }
+    
   });
 }

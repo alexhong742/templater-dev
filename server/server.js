@@ -7,9 +7,10 @@ const templateController = require('./templateController')
 const remover = require('./remover.js');
 const moduleController = require('./moduleController.js')
 const settingsController = require('./settingsController');
-// const john = require('./john.js')
+const port = process.env.PORT || 3000;
 
-app.use(bodyParse());
+app.use(bodyParse.json());
+app.use(bodyParse.urlencoded({ extended: false }));
 app.use(express.static('build'));
 
 app.get("/", (req,res) => {
@@ -29,15 +30,14 @@ app.post('/',
   moduleController.assets,
   moduleController.components,
   moduleController.style,
-  settingsController.packageParser,
-  settingsController.webpackParser,
+  // settingsController.packageParser,
+  // settingsController.webpackParser,
   zipper,
-  (req, res) => res.send('this is the response'),
+  (req, res) => {res.send('this is the response')},
 );
 
 app.use('/assets', express.static('build'));
 
-app.listen(3000, () => {
-  console.log('now listening on 3000!');
+app.listen(port, () => {
+  console.log(`now listening on ${port}!`);
 });
-

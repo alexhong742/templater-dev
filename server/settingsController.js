@@ -4,6 +4,7 @@ const vars = require('./utils/templates/webpackVars.js');
 
 module.exports = {
   packageParser(req, res, next) {
+    console.log("packageparser")
     // if (!req.body.packageJson.name && !req.body.packageJson.author) next();
     fs.readFile(path.join(__dirname, './../store/polymerUI/package.json'), 'utf8', (err, data) => {
       const options = req.body.packageJson;
@@ -20,6 +21,7 @@ module.exports = {
   },
 
   webpackParser(req, res, next) {
+    console.log('hello')
     const options = req.body.webpackConfig;
     fs.readFile(path.join(__dirname, './utils/templates/webpackTemplate.js'), 'utf8', (err, data) => {
       if (err) throw err;

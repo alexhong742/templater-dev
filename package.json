@@ -3,21 +3,17 @@
   "version": "1.0.0",
   "description": "React Templater",
   "main": "index.js",
-  "scripts": {
-    "webpack": "./node_modules/.bin/webpack -w",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server/server.js"
+  "engines": {
+    "node": "6.11.1",
+    "npm": "5.4.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/react-templater/templater-dev.git"
+  "scripts": {
+    "webpack": "./node_modules/.bin/webpack --w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/server.js"
   },
   "author": "Jon Roach, Gian Cui, Alex Hong",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/react-templater/templater-dev/issues"
-  },
-  "homepage": "https://github.com/react-templater/templater-dev#readme",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
