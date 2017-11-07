@@ -1,0 +1,180 @@
+@mixin center-align() {
+  position: absolute;
+  left: 50%;
+  top: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+$primary-font: 'Source Sans Pro', sans-serif;
+
+$primary-font-color: #ffffff;
+$secondary-font-color: #C1C1C1; 
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/******** Universal Style ********/ 
+body {
+  background-image: url("../assets/home_bg.png");
+  background-size: cover;
+}
+body, input, button, a {
+  font-family: $primary-font;
+  font-size: 1.6rem;
+  color: $primary-font-color;
+  letter-spacing: 0.1rem;
+}
+input {
+  padding: 10px 15px;
+  color: #B9B9B9;
+  border: none;
+}
+#root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 4%;
+}
+button {
+  padding: 1.5% 2%;
+  border: none;
+  outline: none;
+}
+button:hover {
+  box-shadow: 0 4px 12px 0 rgba(66, 90, 130, 0.70), 0 4px 20px 0 rgba(66, 90, 130, 0.16);
+}
+
+/******** Fonts ********/ 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+h5 {
+  font-size: 1.2rem;
+}
+h6 {
+  font-size: 1.1rem;
+}
+p {
+  font-size: 1rem;
+}
+input, button, ul li {
+  font-size: 1rem;
+}
+
+/******** Header Section ********/ 
+header {
+  position: relative;
+  height: 70px;
+  width: 100%;
+}
+header div {
+  position: absolute;
+  display: inline-block;
+}
+header div:last-child {
+  right: 0;
+}
+
+/******** Main Section ********/ 
+.main-image {
+  width: 100%;
+  height: 340px;
+  background-image: url("../assets/product_sample.png");
+  background-size: auto 100%;
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+.primary-message, .secondary-message {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+.primary-message, .secondary-message {
+  margin-top: 20px;
+}
+.primary-message {
+  font-size: 2.4rem;
+  font-weight: 200;
+}
+.secondary-message {
+  font-weight: 300;
+}
+.cta {
+  display: block;
+  margin: 40px auto;
+  background-color: #478EFA;
+  box-shadow: 0 4px 12px 0 rgba(66, 90, 130, 0.30), 0 4px 20px 0 rgba(66, 89, 130, 0.16);
+}
+
+/******** Form Section ********/ 
+form {
+  @include center-align();
+  width: 70%;
+  height: auto;
+  padding: 4%;
+  background-color: rgb(58, 129, 247);
+  box-shadow: 0 4px 12px 0 rgba(66, 90, 130, 0.70), 0 4px 20px 0 rgba(66, 90, 130, 0.16);
+}
+form input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 4px 12px 0 rgba(66, 90, 130, 0.70), 0 4px 20px 0 rgba(66, 90, 130, 0.16);
+}
+form button {
+  padding: 15px 40px;
+  background-color: #76ACFF;
+}
+form .close {
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  display: inline-block;
+  width: 50px;
+  height: 50px; 
+  background-image: url("../assets/close-icon.png");
+}
+form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+form h3 {
+  font-size: 1.0rem;
+  font-weight: 600;
+}
+form button {
+  display: block;
+}
+.input {
+  margin-bottom: 20px;
+}
+.input div {
+  margin-top: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.input div p {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.checkbox-input p {
+  display: inline;
+}
+.input-2 .text-input, .input-group-1 {
+  display: block;
+}
+.input-group-1 .checkbox-input {
+  margin: 0;
+  margin-right: 15px;
+}
