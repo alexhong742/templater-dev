@@ -25135,7 +25135,7 @@ exports = module.exports = __webpack_require__(89)(undefined);
 
 
 // module
-exports.push([module.i, "html {\n  box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n/******** Universal Style ********/\nbody {\n  background-image: url(" + __webpack_require__(228) + ");\n  background-size: cover; }\n\nbody, input, button, a {\n  font-family: \"Source Sans Pro\", sans-serif;\n  font-size: 1.6rem;\n  color: #ffffff;\n  letter-spacing: 0.1rem; }\n\ninput {\n  padding: 10px 15px;\n  color: #B9B9B9;\n  border: none; }\n\n#root {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  padding: 4%; }\n\nbutton {\n  padding: 1.5% 2%;\n  border: none;\n  outline: none; }\n\nbutton:hover {\n  box-shadow: 0 4px 12px 0 rgba(66, 90, 130, 0.7), 0 4px 20px 0 rgba(66, 90, 130, 0.16); }\n\n/******** Fonts ********/\nh1, h2, h3, h4, h5, h6 {\n  font-weight: 600; }\n\nh2 {\n  font-size: 1.5rem; }\n\nh3 {\n  font-size: 1.4rem; }\n\nh4 {\n  font-size: 1.3rem; }\n\nh5 {\n  font-size: 1.2rem; }\n\nh6 {\n  font-size: 1.1rem; }\n\np {\n  font-size: 1rem; }\n\ninput, button, ul li {\n  font-size: 1rem; }\n\n/******** Header Section ********/\nheader {\n  position: relative;\n  height: 70px;\n  width: 100%; }\n\nheader div {\n  position: absolute;\n  display: inline-block; }\n\nheader div:last-child {\n  right: 0; }\n\n/******** Main Section ********/\n.main-image {\n  width: 100%;\n  height: 340px;\n  background-image: url(" + __webpack_require__(229) + ");\n  background-size: auto 100%;\n  background-position: center;\n  background-repeat: no-repeat; }\n\n.primary-message, .secondary-message {\n  width: 60%;\n  text-align: center;\n  margin: 0 auto; }\n\n.primary-message, .secondary-message {\n  margin-top: 20px; }\n\n.primary-message {\n  font-size: 2.4rem;\n  font-weight: 200; }\n\n.secondary-message {\n  font-weight: 300; }\n\n.cta {\n  display: block;\n  margin: 40px auto;\n  background-color: #478EFA;\n  box-shadow: 0 4px 12px 0 rgba(66, 90, 130, 0.3), 0 4px 20px 0 rgba(66, 89, 130, 0.16); }\n\n/******** Form Section ********/\nform {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  width: 70%;\n  height: auto;\n  padding: 4%;\n  background-color: #3a81f7;\n  box-shadow: 0 4px 12px 0 rgba(66, 90, 130, 0.7), 0 4px 20px 0 rgba(66, 90, 130, 0.16); }\n\nform input[type=\"text\"]:focus {\n  outline: none;\n  box-shadow: 0 4px 12px 0 rgba(66, 90, 130, 0.7), 0 4px 20px 0 rgba(66, 90, 130, 0.16); }\n\nform button {\n  padding: 15px 40px;\n  background-color: #76ACFF; }\n\nform .close {\n  position: absolute;\n  top: 10%;\n  left: 90%;\n  display: inline-block;\n  width: 50px;\n  height: 50px;\n  background-image: url(" + __webpack_require__(230) + "); }\n\nform h2 {\n  font-size: 1.4rem;\n  margin-bottom: 20px; }\n\nform h3 {\n  font-size: 1.0rem;\n  font-weight: 600; }\n\nform button {\n  display: block; }\n\n.input {\n  margin-bottom: 20px; }\n\n.input div {\n  margin-top: 10px;\n  margin-right: 10px;\n  display: inline-block; }\n\n.input div p {\n  font-size: 0.8rem;\n  margin-bottom: 10px; }\n\n.checkbox-input p {\n  display: inline; }\n\n.input-2 .text-input, .input-group-1 {\n  display: block; }\n\n.input-group-1 .checkbox-input {\n  margin: 0;\n  margin-right: 15px; }\n", ""]);
+exports.push([module.i, "html {\n  box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n", ""]);
 
 // exports
 
@@ -25285,24 +25285,6 @@ var SecondaryMessage = function (_Component) {
 }(_react.Component);
 
 exports.default = SecondaryMessage;
-
-/***/ }),
-/* 228 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/home_bg.png";
-
-/***/ }),
-/* 229 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/product_sample.png";
-
-/***/ }),
-/* 230 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/close-icon.png";
 
 /***/ })
 /******/ ]);
