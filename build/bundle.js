@@ -23553,7 +23553,7 @@ var App = function (_Component) {
     };
 
     _this.handleDownload = function (e) {
-      _axios2.default.post('http://localhost:3000/', _this.state.download).then(function (err, response) {
+      _axios2.default.post('/', _this.state.download).then(function (err, response) {
         if (err) console.log(err);
         console.log('this is response');
         window.location = '/download';
