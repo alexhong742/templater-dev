@@ -9,7 +9,7 @@ module.exports = {
 
   assets(req, res, next) {
     if (!req.body.dirSelection.assets) {
-      console.log(req.body.dirSelection.assets, "req.body.dirSelection.assets")
+      console.log(req.body.dirSelection.assets, "assets middlewhere was hit");
       next();
     } else {
       const assetsDir = path.join(__dirname, './../store/polymerUI/client/assets/');

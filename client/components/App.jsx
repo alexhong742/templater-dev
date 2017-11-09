@@ -5,6 +5,7 @@ import axios from 'axios';
 
 /*** Components ***/
 import Header from './Header.jsx';
+import Form from './Form.jsx';
 //This component is the main section of the web page
 import Main from './Main.jsx';
 
@@ -89,7 +90,8 @@ class App extends Component {
   //This function downloads the zipped file.
   handleDownload = (e) => {
     axios.post('http://localhost:3000/', this.state.download)
-      .then((response) => {
+      .then((err, response) => {
+        if(err) console.log(err)
         console.log('this is response');
         window.location = '/download';
       });
@@ -103,31 +105,37 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="container">
-        <Header />
-        <Main 
-
-          name={this.state.download.packageJson.name}
-          author={this.state.download.packageJson.author}
-          outputFileName={this.state.download.webpackConfig.outputFileName}
-          useSass={this.state.download.webpackConfig.useSass}
-          fileLoader={this.state.download.webpackConfig.fileLoader}
-          webpackImageLoader={this.state.download.webpackConfig.webpackImageLoader}
-
-          components={this.state.download.dirSelection.components}
-          style={this.state.download.dirSelection.style}
-          assets={this.state.download.dirSelection.assets}
-
-          displayCtaModal={this.state.displayCtaModal}
-          toggleModal={this.toggleModal}
-          toggleModalClose={this.toggleModalClose}
-
-          handleFormChange={this.handleFormChange}
-          handleInputFocus={this.handleInputFocus}
-          clickDownload={this.handleDownload}/>
-      </div>
-    );
+    console.log('hey there', this.state.displayCtaModal)
+    if (!this.state.displayCtaModal) {
+      return (
+        <div className="container">
+          <Header />
+          <Main toggleModal={this.toggleModal}/>
+        </div>
+      );
+    } else {
+      return (
+        <Form height="100%"
+            name={this.state.download.packageJson.name}
+            author={this.state.download.packageJson.author}
+            outputFileName={this.state.download.webpackConfig.outputFileName}
+            useSass={this.state.download.webpackConfig.useSass}
+            fileLoader={this.state.download.webpackConfig.fileLoader}
+            webpackImageLoader={this.state.download.webpackConfig.webpackImageLoader}
+  
+            components={this.state.download.dirSelection.components}
+            style={this.state.download.dirSelection.style}
+            assets={this.state.download.dirSelection.assets}
+  
+            displayCtaModal={this.state.displayCtaModal}
+            toggleModal={this.toggleModal}
+            toggleModalClose={this.toggleModalClose}
+  
+            handleFormChange={this.handleFormChange}
+            handleInputFocus={this.handleInputFocus}
+            clickDownload={this.handleDownload}/>
+      );
+    }
   }
 }
 

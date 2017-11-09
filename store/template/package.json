@@ -22,7 +22,12 @@
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "path": "^0.12.7"
+    "find-remove": "^1.0.1",
+    "path": "^0.12.7",
+    "recursive-copy": "^2.0.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "zip-folder": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -33,18 +38,10 @@
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.17.2",
     "css-loader": "^0.28.5",
-    "file-loader": "^0.11.2",
-    "image-webpack-loader": "^3.3.1",
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "sass-loader": "^6.0.6",
-    "find-remove": "^1.0.1",
-    "recursive-copy": "^2.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.7.1",
-    "zip-folder": "^1.0.0"
+    "webpack-dev-server": "^2.7.1"
   }
 }

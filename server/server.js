@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParse = require('body-parser');
 const zipper = require('./zipper');
 const templateController = require('./templateController')
-const remover = require('./remover.js');
+const refresh = require('./refresh.js');
 const moduleController = require('./moduleController.js')
 const settingsController = require('./settingsController');
 const port = process.env.PORT || 3000;
@@ -13,9 +13,11 @@ app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({ extended: false }));
 app.use(express.static('build'));
 
-app.get("/", (req,res) => {
+app.get("/",
+  refresh,
+  (req,res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
-});
+  });
 
 app.get('/build/bundle.js', (req, res) => {
   res.sendFile(path.join(__dirname, '../build/bundle.js'));
@@ -30,8 +32,8 @@ app.post('/',
   moduleController.assets,
   moduleController.components,
   moduleController.style,
-  // settingsController.packageParser,
-  // settingsController.webpackParser,
+  settingsController.packageParser,
+  settingsController.webpackParser,
   zipper,
   (req, res) => {res.send('this is the response')});
 

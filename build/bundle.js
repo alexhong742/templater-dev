@@ -23472,6 +23472,10 @@ var _Header = __webpack_require__(215);
 
 var _Header2 = _interopRequireDefault(_Header);
 
+var _Form = __webpack_require__(219);
+
+var _Form2 = _interopRequireDefault(_Form);
+
 var _Main = __webpack_require__(218);
 
 var _Main2 = _interopRequireDefault(_Main);
@@ -23549,7 +23553,8 @@ var App = function (_Component) {
     };
 
     _this.handleDownload = function (e) {
-      _axios2.default.post('http://localhost:3000/', _this.state.download).then(function (response) {
+      _axios2.default.post('http://localhost:3000/', _this.state.download).then(function (err, response) {
+        if (err) console.log(err);
         console.log('this is response');
         window.location = '/download';
       });
@@ -23601,12 +23606,16 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        _react2.default.createElement(_Header2.default, null),
-        _react2.default.createElement(_Main2.default, {
-
+      console.log('hey there', this.state.displayCtaModal);
+      if (!this.state.displayCtaModal) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'container' },
+          _react2.default.createElement(_Header2.default, null),
+          _react2.default.createElement(_Main2.default, { toggleModal: this.toggleModal })
+        );
+      } else {
+        return _react2.default.createElement(_Form2.default, { height: '100%',
           name: this.state.download.packageJson.name,
           author: this.state.download.packageJson.author,
           outputFileName: this.state.download.webpackConfig.outputFileName,
@@ -23624,8 +23633,8 @@ var App = function (_Component) {
 
           handleFormChange: this.handleFormChange,
           handleInputFocus: this.handleInputFocus,
-          clickDownload: this.handleDownload })
-      );
+          clickDownload: this.handleDownload });
+      }
     }
   }]);
 
@@ -24654,10 +24663,6 @@ var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Form = __webpack_require__(219);
-
-var _Form2 = _interopRequireDefault(_Form);
-
 var _Div = __webpack_require__(220);
 
 var _Div2 = _interopRequireDefault(_Div);
@@ -24701,7 +24706,7 @@ var Main = function (_Component) {
       var displayCtaModal = this.props.displayCtaModal;
       return _react2.default.createElement(
         'main',
-        null,
+        { style: { height: "100%" } },
         _react2.default.createElement(_Div2.default, {
           className: 'main-image' }),
         _react2.default.createElement(_PrimaryMessage2.default, {
@@ -24715,25 +24720,7 @@ var Main = function (_Component) {
           className: 'cta',
           buttonName: 'Download Template',
           click: this.props.toggleModal }),
-        displayCtaModal === true && _react2.default.createElement(_Form2.default, {
-          name: this.props.name,
-          author: this.props.author,
-
-          outputFileName: this.props.outputFileName,
-          useSass: this.props.useSass,
-          fileLoader: this.props.fileLoader,
-          webpackImageLoader: this.props.webpackImageLoader,
-
-          components: this.props.components,
-          style: this.props.style,
-          assets: this.props.assets,
-
-          displayCtaModal: this.props.displayCtaModal,
-          toggleModalClose: this.props.toggleModalClose,
-
-          handleFormChange: this.props.handleFormChange,
-          handleInputFocus: this.props.handleInputFocus,
-          clickDownload: this.props.clickDownload })
+        displayCtaModal === true
       );
     }
   }]);
