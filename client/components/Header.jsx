@@ -8,10 +8,10 @@ import Nav from './Nav.jsx';
 class Header extends Component {
   render() {
     return (
-      <div>
+      <header>
         <Logo />
         <Nav />
-      </div>
+      </header>
     );
   }
 }

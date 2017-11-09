@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 var copy = require('recursive-copy');
 
 const src = (include) => {
@@ -8,41 +8,51 @@ const src = (include) => {
 module.exports = {
 
   assets(req, res, next) {
-    if (!req.body.assets) next();
-    else{
-    const assetsDir = path.join(__dirname, './../store/polymerUI/client/assets/');
-    copy(src('assets'), assetsDir, (err,result) => {
-      if(err){console.log('Copy Failed: ' + err)}
-      else{console.info('Copied ' + result.length + ' asset files')}
-      next()
-    });
-  }
+    if (!req.body.dirSelection.assets) {
+      console.log(req.body.dirSelection.assets, "assets middlewhere was hit");
+      next();
+    } else {
+      const assetsDir = path.join(__dirname, './../store/polymerUI/client/assets/');
+      copy(src('assets'), assetsDir, (err,result) => {
+        if (err){console.log('Copy Failed: ' + err)}
+        else {
+          console.info('Copied ' + result.length + ' asset files');
+          next();
+        }
+      })
+    }
   },
 
   components(req, res, next) {
-    if (!req.body.components) {
+    if (!req.body.dirSelection.components) {
+      console.log('components middleware was hit')
       next();
     } else {
-      const componentsDir  = path.join(__dirname, './../store/polymerUI/client/components/');
+      const componentsDir = path.join(__dirname, './../store/polymerUI/client/components/');
       copy(src('components'), componentsDir, (err,result) => {
-        if(err){console.log('Copy Failed: ' + err)}
-        else{console.info('Copied ' + result.length + ' component files')}
-        next()
+        if (err){console.log('Copy Failed: ' + err)}
+        else {
+          console.info('Copied ' + result.length + ' component files')
+          next();
+        }
       });
-    };
+    } 
   },
 
   style(req, res, next) {
-    if (!req.body.style) {
+    if (!req.body.dirSelection.style) {
+      console.log('style middleware was hit')
       next();
     } else {
-      const styleDir  = path.join(__dirname, './../store/polymerUI/client/style/');
+      const styleDir = path.join(__dirname, './../store/polymerUI/client/style/');
       copy(src('style'), styleDir, (err,result) => {
         if(err){console.log('Copy Failed: ' + err)}
-        else{console.info('Copied ' + result.length + ' style files')}
-        next()
+        else{
+          console.info('Copied ' + result.length + ' style files')
+        }
+        next();
       });
-    };
+    }
   },
 }
 
