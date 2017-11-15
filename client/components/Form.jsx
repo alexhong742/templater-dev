@@ -5,10 +5,24 @@ import { Component } from 'react';
 import Button from './Button.jsx';
 
 class Form extends Component {
+  state = {
+    style: {
+      position: "absulute",
+      top: "25%",
+    }
+  };
+  checkMobile() {
+		// console.log(screen) in the browser console will give you the appropriate media query
+		// height/width values that you need
+		if(screen.width < 750){
+			return true;
+		}
+	};
   render() {
     console.log('rendering')
+    if (!this.checkMobile()) this.state.style = undefined;
     return (
-      <form>
+      <form style={this.state.style}>
         <h2>Template Setup:</h2>
         <div className="close"
           onClick={this.props.toggleModalClose}></div>
