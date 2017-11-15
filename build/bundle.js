@@ -25304,15 +25304,15 @@ module.exports = __webpack_require__.p + "8e72d471089a0d5672e750d7e83f39aa.png";
 
 /***/ }),
 /* 229 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/alexhong/Desktop/projectTree/templater-dev/client/assets/product_sample.png'");
+module.exports = __webpack_require__.p + "e895891fef76a2ffe64533facd025341.png";
 
 /***/ }),
 /* 230 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/alexhong/Desktop/projectTree/templater-dev/client/assets/close-icon.png'");
+module.exports = __webpack_require__.p + "0882f9a4dfa5829f89eb914eff193f01.png";
 
 /***/ })
 /******/ ]);
