@@ -23472,11 +23472,11 @@ var _Header = __webpack_require__(215);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Form = __webpack_require__(219);
+var _Form = __webpack_require__(218);
 
 var _Form2 = _interopRequireDefault(_Form);
 
-var _Main = __webpack_require__(218);
+var _Main = __webpack_require__(219);
 
 var _Main2 = _interopRequireDefault(_Main);
 
@@ -23553,7 +23553,7 @@ var App = function (_Component) {
     };
 
     _this.handleDownload = function (e) {
-      _axios2.default.post('http://localhost:3000/', _this.state.download).then(function (err, response) {
+      _axios2.default.post('/', _this.state.download).then(function (err, response) {
         if (err) console.log(err);
         console.log('this is response');
         window.location = '/download';
@@ -24663,90 +24663,6 @@ var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Div = __webpack_require__(220);
-
-var _Div2 = _interopRequireDefault(_Div);
-
-var _PrimaryMessage = __webpack_require__(221);
-
-var _PrimaryMessage2 = _interopRequireDefault(_PrimaryMessage);
-
-var _SecondaryMessage = __webpack_require__(222);
-
-var _SecondaryMessage2 = _interopRequireDefault(_SecondaryMessage);
-
-var _Button = __webpack_require__(89);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-/*** Components ***/
-
-
-var Main = function (_Component) {
-  _inherits(Main, _Component);
-
-  function Main() {
-    _classCallCheck(this, Main);
-
-    return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
-  }
-
-  _createClass(Main, [{
-    key: 'render',
-    value: function render() {
-      //This variable is used for conditional rendering for the form component
-      var displayCtaModal = this.props.displayCtaModal;
-      return _react2.default.createElement(
-        'main',
-        { style: { height: "100%" } },
-        _react2.default.createElement(_Div2.default, {
-          className: 'main-image' }),
-        _react2.default.createElement(_PrimaryMessage2.default, {
-          className: 'primary-message',
-          PrimaryMessage: 'Create beautiful React App fast and furious' }),
-        _react2.default.createElement(_SecondaryMessage2.default, {
-          className: 'secondary-message',
-          SecondaryMessage: 'A set of customizable React templates that helps developers to create beautiful App with few clicks' }),
-        _react2.default.createElement(_Button2.default, {
-          type: 'submit',
-          className: 'cta',
-          buttonName: 'Download Template',
-          click: this.props.toggleModal }),
-        displayCtaModal === true
-      );
-    }
-  }]);
-
-  return Main;
-}(_react.Component);
-
-exports.default = Main;
-
-/***/ }),
-/* 219 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(10);
-
-var _react2 = _interopRequireDefault(_react);
-
 var _Button = __webpack_require__(89);
 
 var _Button2 = _interopRequireDefault(_Button);
@@ -24941,6 +24857,90 @@ var Form = function (_Component) {
 }(_react.Component);
 
 exports.default = Form;
+
+/***/ }),
+/* 219 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(10);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Div = __webpack_require__(220);
+
+var _Div2 = _interopRequireDefault(_Div);
+
+var _PrimaryMessage = __webpack_require__(221);
+
+var _PrimaryMessage2 = _interopRequireDefault(_PrimaryMessage);
+
+var _SecondaryMessage = __webpack_require__(222);
+
+var _SecondaryMessage2 = _interopRequireDefault(_SecondaryMessage);
+
+var _Button = __webpack_require__(89);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/*** Components ***/
+
+
+var Main = function (_Component) {
+  _inherits(Main, _Component);
+
+  function Main() {
+    _classCallCheck(this, Main);
+
+    return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+  }
+
+  _createClass(Main, [{
+    key: 'render',
+    value: function render() {
+      //This variable is used for conditional rendering for the form component
+      var displayCtaModal = this.props.displayCtaModal;
+      return _react2.default.createElement(
+        'main',
+        { style: { height: "100%" } },
+        _react2.default.createElement(_Div2.default, {
+          className: 'main-image' }),
+        _react2.default.createElement(_PrimaryMessage2.default, {
+          className: 'primary-message',
+          PrimaryMessage: 'Create beautiful React App fast and furious' }),
+        _react2.default.createElement(_SecondaryMessage2.default, {
+          className: 'secondary-message',
+          SecondaryMessage: 'A set of customizable React templates that helps developers to create beautiful App with few clicks' }),
+        _react2.default.createElement(_Button2.default, {
+          type: 'submit',
+          className: 'cta',
+          buttonName: 'Download Template',
+          click: this.props.toggleModal }),
+        displayCtaModal === true
+      );
+    }
+  }]);
+
+  return Main;
+}(_react.Component);
+
+exports.default = Main;
 
 /***/ }),
 /* 220 */

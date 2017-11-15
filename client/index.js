@@ -11,4 +11,4 @@ import reset from './style/reset.scss';
 //This is the actual style for the content
 import style from './style/style.scss';
 
-render(<App />, document.getElementById('root'));
+render(<App/>, document.getElementById('root'));

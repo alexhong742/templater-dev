@@ -5,7 +5,7 @@ module.exports = (req,res,next) => {
 
   let source = path.join(__dirname, './../store/template')
   let destination = path.join(__dirname, './../store/polymerUI')
-
+  console.log('template Controller was hit!')
   copy(source, destination, function(error, results) {
     if (error) {
     console.error('Copy failed: ' + error);
