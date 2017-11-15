@@ -115,7 +115,7 @@ class App extends Component {
       );
     } else {
       return (
-        <Form height="100%"
+        <Form
             name={this.state.download.packageJson.name}
             author={this.state.download.packageJson.author}
             outputFileName={this.state.download.webpackConfig.outputFileName}

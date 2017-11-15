@@ -23615,7 +23615,7 @@ var App = function (_Component) {
           _react2.default.createElement(_Main2.default, { toggleModal: this.toggleModal })
         );
       } else {
-        return _react2.default.createElement(_Form2.default, { height: '100%',
+        return _react2.default.createElement(_Form2.default, {
           name: this.state.download.packageJson.name,
           author: this.state.download.packageJson.author,
           outputFileName: this.state.download.webpackConfig.outputFileName,
@@ -24682,18 +24682,41 @@ var Form = function (_Component) {
   _inherits(Form, _Component);
 
   function Form() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, Form);
 
-    return _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Form.__proto__ || Object.getPrototypeOf(Form)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      style: {
+        position: "absulute",
+        top: "25%"
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Form, [{
+    key: 'checkMobile',
+    value: function checkMobile() {
+      // console.log(screen) in the browser console will give you the appropriate media query
+      // height/width values that you need
+      if (screen.width < 750) {
+        return true;
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       console.log('rendering');
+      if (!this.checkMobile()) this.state.style = undefined;
       return _react2.default.createElement(
         'form',
-        null,
+        { style: this.state.style },
         _react2.default.createElement(
           'h2',
           null,
